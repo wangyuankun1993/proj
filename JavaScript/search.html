@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>search</title>
+</head>
+<body>
+
+<p>搜索字符串“runoob”，并显示匹配的起始位置：</p>
+<button type="button" onclick="myFunction()">点我</button>
+<p id="demo"></p>
+<script>
+function myFunction()
+{
+    var str = 'Visit Runoob!';
+    var n = str.search(/Runoob/i);
+    document.getElementById("demo").innerHTML = n;
+}
+</script>
+</body>
+</html>

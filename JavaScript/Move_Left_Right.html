@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Move_Left_Right</title>
+</head>
+<body>
+
+
+<div id="box_L">
+    <select id="left" multiple size="10">
+        <option>选项一</option>
+        <option>选项二</option>
+        <option>选项三</option>
+        <option>选项四</option>
+        <option>选项五</option>
+    </select>
+</div>
+
+<div id="choice">
+    <input type="button" value="---->" onclick="add()"><br>
+    <input type="button" value="---->" onclick="addall()"><br>
+    <input type="button" value="---->"><br>
+    <input type="button" value="---->"><br>
+</div>
+
+<div id="box_R">
+    <select multiple size="10" id="right">
+        <option>选项七</option>
+    </select>
+</div>
+
+<script>
+    var right=document.getElementById("right");
+    var left=document.getElementById("left");
+
+    function add() {
+        var options=left.children;
+        for (var i=0;i<options.length;i++) {
+            if (options[i].selected==true) {
+                options[i].selected=false;
+                right.appendChild(options[i]);
+                i--;
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

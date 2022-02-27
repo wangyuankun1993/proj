@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>let</title>
+</head>
+<body>
+<h2>使用let声明变量</h2>
+<p id="demo"></p>
+<script>
+var x = 10;
+//这里输出x为10
+{
+    let x = 2;
+    //这里输出x为2
+}
+//这里输出x为10
+document.getElementById("demo").innerHTML = x;
+</script>
+</body>
+</html>

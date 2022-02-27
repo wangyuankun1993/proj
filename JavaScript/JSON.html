@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+</head>
+<body>
+
+<h2>为JSON字符串创建对象</h2>
+<p id="demo"></p>
+<script>
+var text = '{ "sites" : [' +
+    '{ "name":"Runoob","url":"www.runoob.com"},' +
+    '{ "name":"Google","url":"www.google.com"},' +
+    '{ "name":"Taobao","url":"www.taobao.com"} ]}';
+
+obj = JSON.parse(text);
+document.getElementById("demo").innerHTML = obj.sites[1].name + " " + obj.sites[1].url;
+</script>
+
+</body>
+</html>

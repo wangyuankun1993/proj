@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>typeof</title>
+</head>
+<body>
+
+<p>typeof操作符返回变量或表达式的类型</p>
+<p id="demo"></p>
+<script>
+document.getElementById("demo").innerHTML =
+    typeof "john" + "<br>" +
+    typeof 3.14 + "<br>" +
+    typeof false + "<br>" +
+    typeof [1,2,3,4] + "<br>" +
+    typeof {name:'john',age:34} + "<br>" +
+    typeof null + "<br>" +
+    typeof undefined + "<br>" +
+    (null===undefined) + "<br>" +
+    (null==undefined) + "<br>" +
+    typeof NaN + "<br>" +
+    typeof new Date() + "<br>" +
+    typeof function() {};
+</script>
+
+<p>constructtor属性返回变量或对象的构造函数</p>
+<p id="demo2"></p>
+<script>
+document.getElementById("demo2").innerHTML =
+    "john".constructor + "<br>" +
+    (3.14).constructor + "<br>" +
+    false.constructor + "<br>" +
+    [1,2,3,4].constructor + "<br>" +
+    {name:'john',age:34}.constructor + "<br>" +
+    new Date().constructor + "<br>" +
+    function() {}.constructor;
+</script>
+</body>
+</html>

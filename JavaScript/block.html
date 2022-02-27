@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>block</title>
+</head>
+<body>
+
+<h1>我的Web页面</h1>
+<p id="demo">我是一个段落</p>
+<div id="div">我是一个div</div>
+
+<button type="button" onclick="myFunction()">点击这里</button>
+<p>当您点击上面的按钮时，两个元素会改变</p>
+
+<script>
+function myFunction()
+{
+    document.getElementById("demo").innerHTML="你好世界！";
+    document.getElementById("div").innerHTML="你最近怎么样？";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nested-selector</title>
+<style>
+p
+{
+    color:blue;
+    text-align:center;
+}
+.marked
+{
+    background-color:red;
+}
+.marked p
+{
+    color:white;
+}
+p.marked
+{
+    text-decoration:underline;
+}
+</style>
+</head>
+<body>
+<p>这个段落是蓝色文本，居中对齐</p>
+<div class="marked">
+<p>这个段落不是蓝色文本</p>
+</div>
+<p>所有class="marked"元素内的p元素指定一个样式，但有不同的文本颜色</p>
+<p class="marked">带下划线的p段落</p>
+</body>
+</html>

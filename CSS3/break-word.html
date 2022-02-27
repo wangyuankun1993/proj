@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>break-word</title>
+<style>
+p.test1
+{
+    width:11em;
+    border:1px solid #000000;
+    word-wrap:break-word;
+}
+
+p.test2
+{
+    width:9em;
+    border:1px solid #000000;
+    word-break:keep-all;
+}
+
+p.test3
+{
+    width:9em;
+    border:1px solid #000000;
+    word-break:break-all;
+}
+</style>
+</head>
+<body>
+<p class="test1">This paragraph contains a very long word:thisisaveryveryveryveryverylongword. The long word will break and wrap to the next line.</p>
+<p class="test2">This paragraph contains some text. This line will-break-at-hyphenates.</p>
+<p class="test3">This paragraph contains some text. The lines will break at any character.</p>
+</body>
+</html>

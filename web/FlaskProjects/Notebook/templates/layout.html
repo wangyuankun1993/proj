@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>在线学习笔记</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/clean_blog.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+<body>
+{% include 'includes/_navbar.html' %}
+{% include 'includes/_messages.html' %}
+{% block body %}
+{% endblock %}
+{% include 'includes/_footer.html' %}
+
+<!-- Bootstrap core JavaScript -->
+<script src="{{ url_for('static',filename='js/query.js') }}"></script>
+<script src="{{ url_for('static',filename='js/popper.js') }}"></script>
+<script src="{{ url_for('static',filename='js/bootstrap.js') }}"></script>
+</body>
+</html>

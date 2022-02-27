@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>counter</title>
+<style>
+body
+{
+    counter-reset:section;
+}
+h2::before
+{
+    counter-increment:section;
+    content:"Section " counter(section) ":";
+}
+</style>
+</head>
+<body>
+<h1>使用CSS计数器：</h1>
+<h2>HTML教程</h2>
+<h2>CSS教程</h2>
+<h2>JavaScript教程</h2>
+</body>
+</html>

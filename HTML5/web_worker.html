@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Worker</title>
+</head>
+<body>
+
+<p>计数：<output id="result"></output></p>
+<button onclick="startWorker()">开始工作</button>
+<button onclick="stopWorker()">停止工作</button>
+<p><strong>注意：</strong>Internet Explorer 9及更早IE版本浏览器不支持Web Worker。</p>
+
+<script>
+    var w;
+    function startWorker() {
+        if(typeof(Worker) !== "undefined") {
+            w = new Worker("https://www.runoob.com/try/demo_source/demo_workers.js");
+        }
+        w.onmessage = function(event) {
+            document.getElementById("result").innerHTML = event.data;
+        };
+        else {
+            document.getElementById("result").innerHTML = "抱歉，你的浏览器不支持Web Workers...";
+        }
+    }
+
+    function stopWorker() {
+        w.terminate();
+        w = undefined;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>validate</title>
+</head>
+<body>
+<h1>JavaScript验证输入</h1>
+<p>请输入1到10之间的数字：</p>
+<input id="numb">
+<button type="button" onclick="myFunction()">提交</button>
+<p id="demo"></p>
+
+<script>
+function myFunction()
+{
+    var x, text;
+
+    //获取id="numb"的值
+    x = document.getElementById("numb").value;
+
+    //如果输入的值x不是数字或者小于1或者大于10，则提示错误Not a Number or less than one or greater than 10
+    if (isNaN(x) || x < 1 || x > 10)
+    {
+        text = "输入错误";
+    }
+    else
+    {
+        text = "输入正确";
+    }
+    document.getElementById("demo").innerHTML = text;
+}
+</script>
+</body>
+</html>

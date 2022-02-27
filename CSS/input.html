@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>input</title>
+<style>
+input[type=text]
+{
+    width:130px;
+    padding:12px 20px 12px 40px;
+    margin:8px 0;
+    box-sizing:border-box;
+    border:2px solid black;
+    border-radius:10px;
+    -webkit-transition:width 0.5s ease-in-out;
+    transition:width 0.5s ease-in-out;
+    outline:none;
+    background-image:url("https://static.runoob.com/images/mix/searchicon.png");
+    background-color:white;
+    background-position:10px 10px;
+    background-repeat:no-repeat;
+}
+input[type=text]:focus
+{
+    width:100%;
+}
+</style>
+</head>
+<body>
+<p>搜索输入框带动画：</p>
+<form>
+    <input type="text" name="search" placeholder="搜索...">
+</form>
+</body>
+</html>

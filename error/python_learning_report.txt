@@ -1,0 +1,3 @@
+In Python you can open a file.
+In Python you can use loop.
+In Python you can build a list.

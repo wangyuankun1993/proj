@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this</title>
+</head>
+<body>
+<h2>JavaScrip <b>this</b> 关键字</h2>
+<p>实例中，<b>this</b> 指向了 <b>person</b> 对象。</p>
+<p>因为person对象是fullName方法的所有者</p>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+
+<script>
+//创建一个对象
+var person = {
+    firstName:"John",
+    lastName:"Doe",
+    id:5566,
+    fullName:function() {
+        return this.firstName + " " + this.lastName;
+    }
+};
+
+//显示对象的数据
+document.getElementById("demo1").innerHTML = person.fullName();
+</script>
+
+<script>
+var x = this;
+document.getElementById("demo2").innerHTML = x;
+</script>
+
+<script>
+"use strict";
+var x = this;
+document.getElementById("demo3").innerHTML = x;
+</script>
+
+<script>
+document.getElementById("demo4").innerHTML = myFunction();
+function myFunction() {
+    return this;
+}
+</script>
+
+<script>
+"use strict";
+document.getElementById("demo5").innerHTML = myFunction();
+function myFunction() {
+    return this;
+}
+</script>
+
+<button type="button" onclick="this.style.display='none'">点我后就消失了</button>
+
+</body>
+</html>

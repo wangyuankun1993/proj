@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>border-width</title>
+<style>
+p.one
+{
+    border-style:solid;
+    border-width:5px;
+    border-color:red;
+}
+p.two
+{
+    border-style:solid;
+    border-width:medium;
+    border-color:#98bf21;
+}
+p.three
+{
+    border-style:solid;
+    border-width:1px;
+    border-color:rgb(255,255,0);
+}
+p.four
+{
+    border-top-style:dotted;
+    border-right-style:solid;
+    border-bottom-style:dotted;
+    border-left-style:solid;
+}
+p.five
+{
+    border-style:dotted solid;
+}
+p.six
+{
+    border:5px solid red;
+}
+</style>
+</head>
+
+<body>
+<p class="one">一些文本</p>
+<p class="two">一些文本</p>
+<p class="three">一些文本</p>
+<p class="four">两个不同的边界样式</p>
+<p class="five">两个不同的边界样式</p>
+<p class="six">边框简写属性</p>
+<p><b>注意：</b>"border-width"属性如果单独使用则不起作用，要先使用"border-style"属性来设置边框</p>
+<p><b>注意：</b>"border-color"属性如果单独使用则不起作用，要先使用"border-style"属性来设置边框</p>
+
+</body>
+</html>

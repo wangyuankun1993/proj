@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Secondary-Linkage</title>
+</head>
+<body>
+
+<select id="province" onchange="func1(this)">
+    <option>河北省</option>
+    <option>北京</option>
+    <option>甘肃省</option>
+</select>
+
+<select id="city">
+
+</select>
+
+<script>
+    data={"河北省":["邯郸","廊坊"],"北京":["海淀","朝阳"],"甘肃":["兰州","白银"]};
+    var pro=document.getElementById("province");
+    var city=document.getElementById("city");
+    for (var i in data) {
+        var option_pro=document.createElement("option");
+        option_pro.innerHTML=i;
+        pro.appendChild(option_pro);
+    }
+
+    function func1(self) {
+        var choice=(self.options[self.selectedIndex]).innerHTML;
+
+        var options=city.children;
+        for (var k=0;k<options.length;k++) {
+            city.removeChild(options[k]);
+            k--;
+        }
+
+
+        for (var i in data[choice]) {
+            var option_city=document.createElement("option");
+            option_city.innerHTML=data[choice][i];
+            city.appendChild(option_city);
+        }
+
+    }
+</script>
+</body>
+</html>

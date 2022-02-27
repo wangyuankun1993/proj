@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+# Product Name: PyCharm
+# Project Name: BBS
+# File Name: FLAG
+# Date: 2022/01/15 17:50:08
+# Author: wangyuankun
+# Function: This file is to achieve FLAG!
+NOT_NULL = 1
+PRI_KEY = 2
+UNIQUE_KEY = 4
+MULTIPLE_KEY = 8
+BLOB = 16
+UNSIGNED = 32
+ZEROFILL = 64
+BINARY = 128
+ENUM = 256
+AUTO_INCREMENT = 512
+TIMESTAMP = 1024
+SET = 2048
+PART_KEY = 16384
+GROUP = 32767
+UNIQUE = 65536

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>border-image</title>
+<style>
+div
+{
+    border:15px solid transparent;
+    width:250px;
+    padding:10px 20px;
+}
+
+#round
+{
+    -webkit-border-image:url("https://www.runoob.com/images/border.png") 30 30 round; /* Safari 5 and older */
+    -o-border-image:url("https://www.runoob.com/images/border.png") 30 30 round; /* Opera */
+    border-image:url("https://www.runoob.com/images/border.png");
+}
+
+#stretch
+{
+    -webkit-border-image:url("https://www.runoob.com/images/border.png") 30 30 stretch; /* Safari 5 and older */
+    -o-border-image:url("https://www.runoob.com/images/border.png") 30 30 stretch; /* Opera */
+    border-image:url("https://www.runoob.com/images/border.png") 30 30 stretch;
+}
+</style>
+</head>
+<body>
+<p><b>注意：</b>Internet Explorer不支持border-image属性</p>
+<p>border-image属性用于设置图片的边框</p>
+
+<div id="round">这里图像平铺来填充该区域</div>
+<hr>
+<div id="stretch">这里图像被拉伸以填充该区域</div>
+</body>
+</html>

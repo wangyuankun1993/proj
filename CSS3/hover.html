@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hover</title>
+<style>
+div
+{
+    width:100px;
+    height:100px;
+    background:red;
+    transition:width 2s, height 2s, transform 2s;
+    -webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari */
+}
+
+div:hover
+{
+    width:200px;
+    height:200px;
+    -webkit-transform:rotate(180deg);
+    transform:rotateX(180deg);
+}
+</style>
+</head>
+<body>
+<div></div>
+<p>鼠标移动到div元素上，查看过渡效果</p>
+<div>鼠标移动到div元素上，查看过渡效果</div>
+</body>
+</html>

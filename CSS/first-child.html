@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>first-child</title>
+<style>
+
+p:first-child
+{
+    color:blue;
+}
+
+p > i:first-child
+{
+    color:red;
+}
+
+p:first-child i
+{
+    color:orangered;
+}
+</style>
+</head>
+
+<body>
+<p>This is some text.</p>
+<p>This is some text.</p>
+
+<p>I am a <i>strong</i> man. I am a <i>strong</i> man.</p>
+<p>I am a <i>strong</i> man. I am a <i>strong</i> man.</p>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 脚本</title>
+</head>
+<body>
+
+<script>
+    document.write("Hello World!")
+</script>
+
+<noscript>抱歉，你的浏览器不支持JavaScript！</noscript>
+<p>不支持JavaScript的浏览器会使用&lt;noscript&gt;元素中定义的内容（文本）来替代。</p>
+
+<p>JavaScript能够直接写入HTML输出流中：</p>
+<script>
+    document.write("<h1>这是一个标题</h1>");
+    document.write("<p>这是一个段落。</p>");
+</script>
+<p>
+您只能在HTML输出流中使用<strong>document.write</strong>。
+如果您在文档已加载后使用它（比如在函数中），会覆盖整个文档。
+</p>
+
+<h1>我的第一个JavaScript</h1>
+<p id="demo">
+    JavaScript可以触发邮件，就像按钮点击。
+</p>
+
+<script>
+function myFunction1()
+{
+    document.getElementById("demo").innerHTML="Hello JavaScript!";
+}
+</script>
+<button type="button" onclick="myFunction1()">点我</button>
+
+<h1>我的第一段JavaScript</h1>
+<p id="demo">
+    JavaScript能改变HTML元素的样式。
+</p>
+
+<script>
+    function myFunction2()
+    {
+        x=document.getElementById("demo") //找到元素
+        x.style.color="#ff0000";          //改变样式
+    }
+</script>
+<button type="button" onclick="myFunction2()">点击这里</button>
+
+</body>
+</html>

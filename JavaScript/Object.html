@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object</title>
+</head>
+<body>
+
+<p>创建JavaScript对象</p>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+var person = {
+    firstName:"Yuankun",
+    lastName:"Wang",
+    age:28,
+    fullName:function()
+    {
+        return this.firstName + " " + this.lastName;
+    }
+};
+document.getElementById("demo1").innerHTML = "不加括号输出函数表达式：" + person.fullName;
+document.getElementById("demo2").innerHTML = "加括号输出函数表达式：" + person.fullName();
+</script>
+
+</body>
+</html>

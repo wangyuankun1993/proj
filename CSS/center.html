@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>center</title>
+<style>
+.center
+{
+    margin:auto;
+    text-align:center;
+    width:60%;
+    border:3px solid #73AD21;
+    padding:10px;
+}
+.right
+{
+    position:absolute;
+    right:0px;
+    width:300px;
+    border:3px solid #73AD21;
+    padding:10px;
+}
+img
+{
+    display:block;
+    margin:0 auto;
+}
+</style>
+</head>
+
+<body>
+<h2>元素居中对齐</h2>
+<p>水平居中块级元素（如div），可以使用margin:auto;</p>
+<div class="center">
+<p><b>注意：</b>使用margin：auto无法兼容IE8，除非！DOCTYPE已经声明</p>
+</div>
+
+<h2>图片居中对齐</h2>
+<p>要让图片居中对齐，可以使用margin：auto；并将它放到元素中：</p>
+<img src="https://static.runoob.com/images/mix/paris.jpg" alt="Paris" style="width:40%">
+
+<h2>右对齐</h2>
+<div class="right">
+    <p>蔡鸟教程--学的不仅是技术，更是梦想！</p>
+</div>
+</body>
+</html>
