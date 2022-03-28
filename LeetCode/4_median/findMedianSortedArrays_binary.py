@@ -10,14 +10,14 @@ class Solution():
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
         def getKthElement(k):
             """
-            - 主要思路：要找到第k(k>twoSum)小的元素，要么就取pivot1 = nums1[k/addTwoNumbers-twoSum]和pivot2 = nums2[k/addTwoNumbers-twoSum]进行比较
+            - 主要思路：要找到第k(k>1_twoSum)小的元素，要么就取pivot1 = nums1[k/2_addTwoNumbers-1_twoSum]和pivot2 = nums2[k/2_addTwoNumbers-1_twoSum]进行比较
             - 这里的“/”表示整除
-            - nums1中小于等于pivot1的元素有nums1[0...k/addTwoNumbers-addTwoNumbers]共计k/addTwoNumbers-1个
-            - nums2中小于等于pivot2的元素有nums2[0...k/addTwoNumbers-addTwoNumbers]共计k/addTwoNumbers-1个
-            - 取pivot = min(pivot1, pivot2)，两个数组中小于等于pivot的元素共计不会超过(k/addTwoNumbers-twoSum)+(k/addTwoNumbers-twoSum)<=k-2个
+            - nums1中小于等于pivot1的元素有nums1[0...k/2_addTwoNumbers-2_addTwoNumbers]共计k/2_addTwoNumbers-1个
+            - nums2中小于等于pivot2的元素有nums2[0...k/2_addTwoNumbers-2_addTwoNumbers]共计k/2_addTwoNumbers-1个
+            - 取pivot = min(pivot1, pivot2)，两个数组中小于等于pivot的元素共计不会超过(k/2_addTwoNumbers-1_twoSum)+(k/2_addTwoNumbers-1_twoSum)<=k-2个
             - 这样pivot本身最大也只能是第k-1小的元素
-            - 如果pivot = pivot1，那么nums1[0...k/addTwoNumbers-twoSum]都不可能是第k小的元素。把这些元素全部“删除”，剩下的作为新的nums1数组
-            - 如果pivot = pivot2，那么nums2[0...k/addTwoNumbers-twoSum]都不可能是第k小的元素。把这些元素全部“删除”，剩下的作为新的nums2数组
+            - 如果pivot = pivot1，那么nums1[0...k/2_addTwoNumbers-1_twoSum]都不可能是第k小的元素。把这些元素全部“删除”，剩下的作为新的nums1数组
+            - 如果pivot = pivot2，那么nums2[0...k/2_addTwoNumbers-1_twoSum]都不可能是第k小的元素。把这些元素全部“删除”，剩下的作为新的nums2数组
             - 由于我们“删除”了一些元素（这些元素都不第k小的元素要小），因此需要修改k的值，减去删除的数的个数
             :param k:
             :return:

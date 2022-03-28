@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 # Product Name: PyCharm
 # Project Name: LeetCode
-# File Name: longestPlalindrome_dp.py
+# File Name: longestPalindrome_dp.py
 # Date: 2022/03/12 17:01:22
 # Author: wangyuankun
-# Function: This file is to achieve longestPlalindrome_dp function.
+# Function: This file is to achieve longestPalindrome_dp function.
 class Solution():
-    def longestPlalindrome(self, s: str) -> str:
+    def longestPalindrome(self, s: str) -> str:
         n = len(s)
         if n < 2:
             return s
@@ -22,7 +22,7 @@ class Solution():
         for L in range(2, n + 1):
             # 枚举左边界，左边界的上限设置可以宽松一些
             for i in range(n):
-                # 由L和i可以确定右边界，即j-i+twoSum=L得
+                # 由L和i可以确定右边界，即j-i+1_twoSum=L得
                 j = L + i - 1
                 # 如果右边界越界，就可以退出当前循环
                 if j >= n:
