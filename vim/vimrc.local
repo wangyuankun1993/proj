@@ -1,0 +1,87 @@
+syntax enable
+
+syntax on
+
+filetype plugin indent on
+
+au GUIEnter * simalt ~x
+
+set fileformats=unix,dos
+
+set fileencoding=utf-8
+
+set fenc=utf-8
+
+set encoding=utf-8
+
+set termencoding=utf-8
+
+set nocompatible
+
+set number
+
+set hlsearch
+
+set incsearch
+
+set tabstop=4
+
+set softtabstop=4
+
+set cindent shiftwidth=4
+
+set expandtab
+
+set hidden
+
+set ignorecase
+
+set completeopt=menu
+
+set nobackup
+
+set noswapfile
+
+set nowrap
+
+colorscheme evening
+
+set guifont=JetBrains Mono NL Bold 13
+
+set ruler
+
+set showcmd
+
+set cmdheight=3
+
+set laststatus=2
+
+set autoread
+
+set autowrite
+
+set cursorline cursorcolumn
+
+set autoindent
+
+set smartindent
+
+set history=1000
+
+set backspace=2
+
+set showmatch
+
+set guioptions=aegimRrLltTb
+
+highlight Cursor guifg=Black guibg=Orange
+
+set whichwrap=b,s,<,>,[,]
+
+set linebreak
+
+set virtualedit=all
+
+set foldcolumn=2
+
+set visualbell
