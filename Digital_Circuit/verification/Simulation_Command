@@ -1,8 +1,0 @@
-// compile
-iverilog -g2005-sv -o test -f filelist.f -s tb_top
-
-// wave
-vvp -n test -lxt2
-
-// open wave
-gtkwave xxx.vcd
