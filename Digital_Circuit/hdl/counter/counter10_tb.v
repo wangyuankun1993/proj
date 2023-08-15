@@ -55,20 +55,20 @@ module counter10_tb;
     //==================(5)==================
     // dump wave
     initial begin
-        $dumpfile("counter10_wave.vcd");
-        $dumpvars(0, counter10_tb);
+        $fsdbDumpfile("counter10.fsdb");
+        $fsdbDumpvars(0, counter10_tb);
     end
 
     //==================(6)==================
     // simulation finish
     always begin
         #100;
-        if ($time >= 10000) begin
+        if ($time >= 500) begin
             $display("-------------------------");
             $display("Data process is OK!!!");
             $display("-------------------------");
+            #1;
+            $finish;
         end
-        #1;
-        $finish;
     end
 endmodule
