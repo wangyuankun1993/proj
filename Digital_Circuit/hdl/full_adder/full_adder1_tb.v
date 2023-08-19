@@ -5,7 +5,7 @@
 // Email         : yuankun.wang@aliyun.com
 // Website       : yuankun.wang
 // Created On    : 2023/02/02 00:15
-// Last Modified : 2023/02/05 15:29
+// Last Modified : 2023/08/20 00:46
 // File Name     : full_adder1_tb.v
 // Description   :
 //         
@@ -41,8 +41,8 @@ module full_adder1_tb;
     );
 
     initial begin
-        $dumpfile("full_adder1_wave.vcd");
-        $dumpvars(0, full_adder1_tb);
+        $fsdbDumpfile("full_adder1.fsdb");
+        $fsdbDumpvars(0, full_adder1_tb);
     end
 
     initial begin
