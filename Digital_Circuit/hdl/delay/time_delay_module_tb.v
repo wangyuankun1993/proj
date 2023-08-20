@@ -5,7 +5,7 @@
 // Email         : yuankun.wang@aliyun.com
 // Website       : yuankun.wang
 // Created On    : 2023/02/05 16:12
-// Last Modified : 2023/02/05 16:19
+// Last Modified : 2023/08/20 23:39
 // File Name     : time_delay_module_tb.v
 // Description   :
 //         
@@ -47,8 +47,8 @@ module time_delay_module_tb;
     );
 
     initial begin
-        $dumpfile("time_delay_module_wave.vcd");
-        $dumpvars(0, time_delay_module_tb);
+        $fsdbDumpfile("time_delay_module.fsdb");
+        $fsdbDumpvars(0, time_delay_module_tb);
     end
 
     initial begin

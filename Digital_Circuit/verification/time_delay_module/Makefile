@@ -1,13 +1,13 @@
-all: compile wave result
+all: compile simulate verdi
 
 compile:
-	iverilog -g2005-sv -o test -f filelist.f -s time_delay_module_tb
+	vcs -full64 -sverilog -f filelist.f -R +v2k -debug_access+all -timescale=1ns/1ps -fsdb -l compile.log
 
-wave:
-	vvp -n test -lxt2
+simulate:
+	./simv -l simulate.log
 	
-result:
-	gtkwave time_delay_module_wave.vcd
+verdi:
+	verdi -2001 -f filelist.f -top time_delay_module_tb -ssf *.fsdb &
 
 clean:
-	rm -rf *.vcd test
+	rm -rf simv.daidir verdiLog csrc ucli.key simv *.log *.fsdb *.conf *.rc
