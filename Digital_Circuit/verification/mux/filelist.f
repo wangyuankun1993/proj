@@ -1,2 +1,2 @@
-../../hdl/mux/mux4_1.v
-../../hdl/mux/mux4_1_tb.v
+../../hdl/mux/mux4_1_case.v
+../../hdl/mux/mux4_1_case_tb.v

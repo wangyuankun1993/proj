@@ -7,7 +7,7 @@ simulate:
 	./simv -l simulate.log
 	
 verdi:
-	verdi -2001 -f filelist.f -top mux4_1_tb -ssf *.fsdb &
+	verdi -2001 -f filelist.f -top mux4_1_case_tb -ssf *.fsdb &
 
 clean:
 	rm -rf simv.daidir verdiLog csrc ucli.key simv *.log *.fsdb *.conf *.rc
