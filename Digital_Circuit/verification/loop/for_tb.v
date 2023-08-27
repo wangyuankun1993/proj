@@ -4,9 +4,9 @@
 // Author        : Yuankun.Wang
 // Email         : wangyuankun@aliyun.com
 // Website       : yuankun.wang
-// Created On    : 2023/08/27 11:58
-// Last Modified : 2023/08/27 12:24
-// File Name     : while_tb.v
+// Created On    : 2023/08/27 12:18
+// Last Modified : 2023/08/27 12:23
+// File Name     : for_tb.v
 // Description   :
 //         
 // Copyright (c) 2023 CIX Co.,Ltd..
@@ -20,20 +20,21 @@
 // -FHDR----------------------------------------------------------------------------
 `timescale 1ns/1ps
 
-module while_tb;
+module for_tb;
 
+    integer i;
     reg [3:0] counter;
     initial begin
         counter = 4'b0;
-        while (counter <= 10) begin
+        for (i=0;i<=10;i=i+1) begin
             #10;
             counter = counter + 1'b1;
         end
     end
 
     initial begin
-        $fsdbDumpfile("while.fsdb");
-        $fsdbDumpvars(0, while_tb);
+        $fsdbDumpfile("for.fsdb");
+        $fsdbDumpvars(0, for_tb);
     end
 
     always begin

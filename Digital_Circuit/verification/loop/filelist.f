@@ -1,1 +1,1 @@
-./while_tb.v
+./for_tb.v
