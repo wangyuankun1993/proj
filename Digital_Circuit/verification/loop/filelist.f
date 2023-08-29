@@ -1,1 +1,1 @@
-./for_tb.v
+./repeat_tb.v
