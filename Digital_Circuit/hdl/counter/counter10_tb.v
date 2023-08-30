@@ -5,7 +5,7 @@
 // Email         : yuankun.wang@aliyun.com
 // Website       : yuankun.wang
 // Created On    : 2023/01/02 18:35
-// Last Modified : 2023/01/02 19:42
+// Last Modified : 2023/08/31 00:22
 // File Name     : counter10_tb.v
 // Description   :
 //         
@@ -38,8 +38,18 @@ module counter10_tb;
     //==================(3)==================
     // reset generating
     initial begin
+        clk = 1'b0;
         rstn = 1'b0;
-        #12; rstn = 1'b1;
+        #10;
+        rstn = 1'b1;
+        wait (counter10_tb.u_counter10.cnt_temp == 4'd4);
+        @(negedge clk);
+        force counter10_tb.u_counter10.cnt_temp = 4'd6;
+        force counter10_tb.u_counter10.cout = 1'b1;
+        #40;
+        @(negedge clk);
+        release counter10_tb.u_counter10.cnt_temp;
+        release counter10_tb.u_counter10.cout;
     end
 
     //==================(4)==================
