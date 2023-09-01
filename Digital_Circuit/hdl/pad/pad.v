@@ -5,7 +5,7 @@
 // Email         : wangyuankun@aliyun.com
 // Website       : yuankun.wang
 // Created On    : 2023/09/01 00:42
-// Last Modified : 2023/09/01 00:55
+// Last Modified : 2023/09/02 00:49
 // File Name     : pad.v
 // Description   :
 //         
@@ -21,7 +21,7 @@
 module pad(
     input DIN, // pad driver when pad configured as output
     input OEN, // pad direction(1-input, 0-output)
-    input [1:0] PULL, // pull function(00,01-dispull, 10-pullup, 11-pulldown)
+    input [1:0] PULL, // pull function(00,01-dispull, 10-pulldown, 11-pullup)
     inout PAD,
     output reg DOUT // pad load when pad configured as input
 );
