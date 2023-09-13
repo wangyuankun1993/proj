@@ -5,7 +5,7 @@
 // Email         : wangyuankun@aliyun.com
 // Website       : yuankun.wang
 // Created On    : 2023/09/12 00:38
-// Last Modified : 2023/09/12 00:45
+// Last Modified : 2023/09/14 00:41
 // File Name     : xor_oper.v
 // Description   :
 //         
@@ -47,7 +47,7 @@ module xor_oper #(parameter N = 4) (
         input [N-1:0] numa;
         input [N-1:0] numb;
         output [N-1:0] numco;
-        # numco = numa ^ numb;
+        #3 numco = numa ^ numb;
     endtask
 
 endmodule
