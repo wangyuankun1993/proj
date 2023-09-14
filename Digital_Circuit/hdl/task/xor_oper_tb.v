@@ -5,7 +5,7 @@
 // Email         : wangyuankun@aliyun.com
 // Website       : yuankun.wang
 // Created On    : 2023/09/14 00:44
-// Last Modified : 2023/09/14 00:52
+// Last Modified : 2023/09/15 00:05
 // File Name     : xor_oper_tb.v
 // Description   :
 //         
@@ -61,6 +61,11 @@ module xor_oper_tb;
         .b(b),
         .co(co)
     );
+
+    initial begin
+        $fsdbDumpfile("xor_oper.fsdb");
+        $fsdbDumpvars(0, xor_oper_tb);
+    end
 
     initial begin
         forever begin
