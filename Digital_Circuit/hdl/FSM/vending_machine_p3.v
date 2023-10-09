@@ -5,7 +5,7 @@
 // Email         : wangyuankun@aliyun.com
 // Website       : yuankun.wang
 // Created On    : 2023/10/07 23:43
-// Last Modified : 2023/10/07 23:50
+// Last Modified : 2023/10/10 00:13
 // File Name     : vending_machine_p3.v
 // Description   :
 //         
@@ -45,3 +45,60 @@ module vending_machine_p3(
             current_state <= next_state;
         end
     end
+
+    // (2) state switch, using block assignment for combination-logic
+    // all case items need to be displayed completely
+    always @ (*) begin
+        case(current_state)
+            IDLE:
+                case(coin)
+                    2'b01: next_state = GET05;
+                    2'b10: next_state = GET10;
+                    default: next_state = IDLE;
+                endcase
+            GET05:
+                case(coin)
+                    2'b01: next_state = GET10;
+                    2'b10: next_state = GET15;
+                    default: next_state = GET05;
+                endcase
+            GET10:
+                case(coin)
+                    2'b01: next_state = GET15;
+                    2'b10: next_state = IDLE;
+                    default: next_state = GET10;
+                endcase
+            GET15:
+                case(coin)
+                    2'b01, 2'b10: next_state = IDLE;
+                    default: next_state = GET15;
+                endcase
+            default: next_state = IDLE;
+        endcase
+
+    // (3) output logic, using non-block assignment
+    reg [1:0] change_r;
+    reg sell_r;
+    always @ (posedge clk or negedge rstn) begin
+        if (!rstn) begin
+            change_r <= 2'b0;
+            sell_r <= 1'b0;
+        end
+        else if (current_state == GET15 && coin  == 2'b01) || (current_state == GET10 && coin == 2'b10) begin
+            change_r <= 2'b0;
+            sell_r <= 1'b1;
+        end
+        else if (current_state == GET15 && coin == 2'b10) begin
+            change_r <= 2'b1;
+            sell_r <= 1'b1;
+        end
+        else begin
+            change_r <= 2'b0;
+            sell_r <= 1'b0;
+        end
+    end
+
+    assign sell = sell_r;
+    assign change = change_r;
+
+endmodule
