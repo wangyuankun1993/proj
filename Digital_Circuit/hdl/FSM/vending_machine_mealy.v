@@ -5,7 +5,7 @@
 // Email         : wangyuankun@aliyun.com
 // Website       : yuankun.wang
 // Created On    : 2023/10/07 23:43
-// Last Modified : 2023/10/10 00:13
+// Last Modified : 2023/10/13 00:07
 // File Name     : vending_machine_p3.v
 // Description   :
 //         
@@ -18,7 +18,7 @@
 // ---------------------------------------------------------------------------------
 // 2023/10/07   Yuankun.Wang    1.0                     Original
 // -FHDR----------------------------------------------------------------------------
-module vending_machine_p3(
+module vending_machine_mealy(
     input clk,
     input rstn,
     input [1:0] coin, // 01 for 0.5 yuan, 10 for 1 yuan
@@ -75,6 +75,7 @@ module vending_machine_p3(
                 endcase
             default: next_state = IDLE;
         endcase
+    end
 
     // (3) output logic, using non-block assignment
     reg [1:0] change_r;
@@ -84,7 +85,7 @@ module vending_machine_p3(
             change_r <= 2'b0;
             sell_r <= 1'b0;
         end
-        else if (current_state == GET15 && coin  == 2'b01) || (current_state == GET10 && coin == 2'b10) begin
+        else if ((current_state == GET15 && coin  == 2'b01) || (current_state == GET10 && coin == 2'b10)) begin
             change_r <= 2'b0;
             sell_r <= 1'b1;
         end
