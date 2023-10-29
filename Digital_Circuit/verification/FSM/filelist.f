@@ -1,2 +1,2 @@
-../../hdl/FSM/vending_machine_mealy.v
-../../hdl/FSM/vending_machine_mealy_tb.v
+../../hdl/FSM/vending_machine_moore.v
+../../hdl/FSM/vending_machine_moore_tb.v
