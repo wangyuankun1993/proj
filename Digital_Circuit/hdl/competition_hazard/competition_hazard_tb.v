@@ -5,7 +5,7 @@
 // Email         : wangyuankun@aliyun.com
 // Website       : yuankun.wang
 // Created On    : 2023/11/19 18:12
-// Last Modified : 2023/11/19 20:04
+// Last Modified : 2023/11/19 23:46
 // File Name     : competition_hazard_tb.v
 // Description   :
 //         
@@ -44,7 +44,7 @@ module competition_hazard_tb;
         #1; din_rvs = 1'b0;
     end
     
-    competition_hazard u_competition_hazard(
+    clap_delay u_clap_delay(
         .clk(clk),
         .rst_n(rst_n),
         .en(en),
@@ -53,7 +53,7 @@ module competition_hazard_tb;
     );
 
     initial begin
-        $fsdbDumpfile("competition_hazard.fsdb");
+        $fsdbDumpfile("clap_delay.fsdb");
         $fsdbDumpvars(competition_hazard_tb, 0);
     end
 
