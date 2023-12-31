@@ -5,7 +5,7 @@
 // Email         : wangyuankun@aliyun.com
 // Website       : yuankun.wang
 // Created On    : 2023/11/26 23:36
-// Last Modified : 2023/11/26 23:45
+// Last Modified : 2023/12/31 22:59
 // File Name     : data_consolidation.v
 // Description   :
 //         
@@ -54,7 +54,7 @@ module data_consolidation
             dout_en_r <= 1'b1;
         end
         else begin
-            dout_en_r <= 1'b0
+            dout_en_r <= 1'b0;
         end
     end
     assign dout_en = dout_en_r;
