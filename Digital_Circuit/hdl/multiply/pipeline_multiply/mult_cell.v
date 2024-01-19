@@ -5,7 +5,7 @@
 // Email         : wangyuankun@aliyun.com
 // Website       : yuankun.wang
 // Created On    : 2024/01/14 23:04
-// Last Modified : 2024/01/14 23:39
+// Last Modified : 2024/01/17 08:18
 // File Name     : mult_cell.v
 // Description   :
 //         
@@ -33,4 +33,31 @@ module mult_cell #(parameter N=4, parameter M=4)
         output reg ready
     );
 
-    always @ ()
+    always @ (posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            ready <= 'b0;
+            mult1_o <= 'b0;
+            mult1_acco <= 'b0;
+            mult2_shift <= 'b0;
+        end
+        else if (en) begin
+            ready <= 1'b1;
+            mult2_shift <= mult2 >> 1;
+            mult1_o <= mult1 << 1;
+            if (mult2[0]) begin
+                mult1_acco <= mult1_acci + mult1;
+            end
+            else begin
+                mult1_acco <= mult1_acci;
+            end
+        end
+        else begin
+            ready <= 'b0;
+            mult1_o <= 'b0;
+            mult1_acco <= 'b0;
+            mult2_shift <= 'b0;
+        end
+    end
+
+endmodule
+
