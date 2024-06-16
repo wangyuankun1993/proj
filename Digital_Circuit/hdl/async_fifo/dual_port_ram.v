@@ -5,7 +5,7 @@
 // Email         : wangyuankun@aliyun.com
 // Website       : yuankun.wang
 // Created On    : 2024/06/15 18:42
-// Last Modified : 2024/06/15 23:32
+// Last Modified : 2024/06/16 13:40
 // File Name     : dual_port_ram.v
 // Description   :
 //         
@@ -66,3 +66,24 @@ module dual_port_ram
         end
 
         // data width shrink(address width extend)
+        else begin
+            // write logic, four times every cycle
+            reg [DATA_WRITE_OUT-1:0] mem [(ADDRESS_WRITE_OUT<<1)-1:0];
+            for (i=0; i<SHRINK; i=i+1) begin
+                always @ (posedge CLK_WR) begin
+                    if (WR_EN) begin
+                        mem[(ADDR_WR*SHRINK)+i] <= D[(i+1)*DATA_WRITE_OUT-1:i*DATA_WRITE_OUT];
+                    end
+                end
+            end
+
+            // read logic, once every cycle
+            always @ (posedge CLK_RD) begin
+                if (RD_EN) begin
+                    Q <= mem[ADDR_RD];
+                end
+            end
+        end
+    endgenerate
+
+endmodule
