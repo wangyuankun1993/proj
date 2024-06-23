@@ -1,0 +1,25 @@
+Command: vcs -full64 -sverilog -f filelist.f -R +v2k -debug_access+all +fsdb+delta \
++define+SMALL2BIG +maxdelays -timescale=1ns/1ps -fsdb -l compile.log
+                         Chronologic VCS (TM)
+       Version O-2018.09-SP2_Full64 -- Sun Jun 23 15:44:23 2024
+               Copyright (c) 1991-2018 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+Parsing design file '../../hdl/async_fifo/counter.v'
+Parsing design file '../../hdl/async_fifo/dual_port_ram.v'
+Parsing design file '../../hdl/async_fifo/fifo_big2small.v'
+Parsing design file '../../hdl/async_fifo/fifo_small2big.v'
+Parsing design file '../../hdl/async_fifo/fifo.v'
+
+Error-[SE] Syntax error
+  Following verilog source has syntax error :
+  "../../hdl/async_fifo/fifo.v", 159: token is 'wire'
+              wire [ADDRESS_WRITE_OUT-1:0] waddr_extend = waddr << SHRINK_BIT;
+                  ^
+
+1 error
+CPU time: .119 seconds to compile
