@@ -2,5 +2,7 @@
 //../../hdl/clk/double_rate_tb.v
 //../../hdl/clk/even_divisor.v
 //../../hdl/clk/even_divisor_tb.v
-../../hdl/clk/odd_divisor_or.v
-../../hdl/clk/odd_divisor_or_tb.v
+//../../hdl/clk/odd_divisor_or.v
+//../../hdl/clk/odd_divisor_or_tb.v
+../../hdl/clk/odd_divisor_and.v
+../../hdl/clk/odd_divisor_and_tb.v
