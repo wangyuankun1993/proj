@@ -8,5 +8,7 @@
 //../../hdl/clk/odd_divisor_and_tb.v
 //../../hdl/clk/half_integer_divisor.v
 //../../hdl/clk/half_integer_divisor_tb.v
-../../hdl/clk/frac_divisor.v
-../../hdl/clk/frac_divisor_tb.v
+//../../hdl/clk/frac_divisor.v
+//../../hdl/clk/frac_divisor_tb.v
+../../hdl/clk/clk_switch.v
+../../hdl/clk/clk_switch_tb.v
