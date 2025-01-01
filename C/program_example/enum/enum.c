@@ -3,17 +3,31 @@
 // File Name       : enum.c
 // Author          : Yuankun.Wang
 // Created Time    : 2024-12-22 23:42:48
-// Last Modified   : 2024-12-22 23:50:46
+// Last Modified   : 2025-01-01 20:06:33
 #include <stdio.h>
+#include <stdlib.h>
 
-enum DAY
+int main()
 {
-    MON=1, TUE, WED, THU, FRI, SAT, SUN
-};
+    enum color { red=1, green, blue };
+    enum color favorite_color;
+    printf("Please input your color: (1.red, 2.green, 3.blue):");
+    scanf("%u", &favorite_color);
 
-int main() {
-    enum DAY day;
-    day = WED;
-    printf("%d", day);
+    switch(favorite_color)
+    {
+        case red:
+            printf("Red");
+            break;
+        case green:
+            printf("Green");
+            break;
+        case blue:
+            printf("Blue");
+            break;
+        default:
+            printf("Error");
+    }
+
     return 0;
 }
