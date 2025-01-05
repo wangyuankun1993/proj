@@ -3,28 +3,31 @@
 // File Name       : pointer.c
 // Author          : Yuankun.Wang
 // Created Time    : 2025-01-01 21:28:08
-// Last Modified   : 2025-01-04 23:59:59
+// Last Modified   : 2025-01-05 16:47:32
 #include <stdio.h>
+#include <stdlib.h>
 
-double getAverage(int *arr, int size);
-
-int main()
+void populate_array(int *array, size_t arraySize, int (*getNextValue)(void))
 {
-    int balance[5] = {1000, 2, 3, 17, 50};
-    double avg;
-    avg = getAverage(balance, 5);
-    printf("Average vlaue is: %f\n", avg);
-    return 0;
+    for(size_t i=0; i<arraySize; i++)
+    {
+        array[i] = getNextValue();
+    }
 }
 
-double getAverage(int *arr, int size)
+int getNextRandomValue(void)
 {
-    int i, sum = 0;
-    double avg;
-    for(i=0;i<size;i++)
+    return rand();
+}
+
+int main(void)
+{
+    int myarray[10];
+    populate_array(myarray, 10, getNextRandomValue);
+    for(int i=0; i<10; i++)
     {
-        sum += arr[i];
+        printf("%d ", myarray[i]);
     }
-    avg = (double)sum / size;
-    return avg;
+    printf("\n");
+    return 0;
 }
