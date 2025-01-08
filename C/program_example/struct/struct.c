@@ -3,7 +3,7 @@
 // File Name       : struct.c
 // Author          : Yuankun.Wang
 // Created Time    : 2025-01-06 23:05:51
-// Last Modified   : 2025-01-07 23:50:50
+// Last Modified   : 2025-01-08 23:36:57
 #include <stdio.h>
 #include <string.h>
 
@@ -14,6 +14,8 @@ struct Books
     char subject[100];
     int book_id;
 };
+
+void printBook(struct Books *book);
 
 int main()
 {
@@ -30,15 +32,16 @@ int main()
     strcpy(Book2.subject, "Telecom Billing Tutorial");
     Book2.book_id = 6495700;
 
-    printf("Book1 title: %s\n", Book1.title);
-    printf("Book1 author: %s\n", Book1.author);
-    printf("Book1 subject: %s\n", Book1.subject);
-    printf("Book1 book_id: %d\n", Book1.book_id);
-
-    printf("Book2 title: %s\n", Book2.title);
-    printf("Book2 author: %s\n", Book2.author);
-    printf("Book2 subject: %s\n", Book2.subject);
-    printf("Book2 book_id: %d\n", Book2.book_id);
+    printBook(&Book1);
+    printBook(&Book2);
 
     return 0;
+}
+
+void printBook(struct Books *book)
+{
+    printf("Book title: %s\n", book->title);
+    printf("Book author: %s\n", book->author);
+    printf("Book subject: %s\n", book->subject);
+    printf("Book book_id: %d\n", book->book_id);
 }
