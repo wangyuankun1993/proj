@@ -3,21 +3,28 @@
 // File Name       : recursion.c
 // Author          : Yuankun.Wang
 // Created Time    : 2025-01-22 23:22:40
-// Last Modified   : 2025-01-22 23:27:59
+// Last Modified   : 2025-01-23 22:54:46
 #include <stdio.h>
 
-double factorial(unsigned int i)
+int fibonaci(int i)
 {
-    if(i <= 1)
+    if(i == 0)
+    {
+        return 0;
+    }
+    if(i == 1)
     {
         return 1;
     }
-    return i * factorial(i - 1);
+    return fibonaci(i-1) + fibonaci(i-2);
 }
 
 int main()
 {
-    int i = 15;
-    printf("%d factorial is %f\n", i, factorial(i));
+    int i;
+    for(i=0; i<10; i++)
+    {
+        printf("%d\t\n", fibonaci(i));
+    }
     return 0;
 }
